@@ -49,14 +49,15 @@ if __name__ == "__main__":
                     nameorage = input("Please enter 1 or 2: ")
                     if nameorage == "1":
                         new_name = input("What is the new name: ")
+                        current_account_name = new_name
                         current_account.change_name(new_name)
                         ai_social_network.list_of_names[ai_social_network.list_of_people.index(current_account)] = new_name
+                        print("Your new name is", current_account.id)
                         break
                     if nameorage == "2":
                         new_age = input("What is the new age: ")
                         current_account.change_age(new_age)
                         break
-
 
                 else:
                     print("Your input is invalid. Try Again!")
