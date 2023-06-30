@@ -56,19 +56,27 @@ if __name__ == "__main__":
                         print("Your new age is", current_account.year)
                         break
 
+                elif inner_menu_choice == "4":
+                    if current_account.inbox == []:
+                       print("You have no new messages.")
+                    else:
+                        for message in current_account.inbox:
+                            print(message)
+                            if (input("Do you want to reply [y/n]: ") == "y"):
+                                ai_social_network.list_of_people[ai_social_network.list_of_names.index(message[1])].inbox.append([input("What is the message you would like to send: ") , current_account_name])
+                        current_account.inbox.remove(message)
+                    break
 
                 else:
                     print("Your input is invalid. Try Again!")
                     inner_menu_choice = social_network_ui.manageAccountMenu()
+
         elif choice == "2":
-            keep_going = True
-            while keep_going:
-                recipient = input("Who would you like to send a message to: ")
-                if recipient in ai_social_network.list_of_names:
-                    print("Did not finish")
-                else:
-                    keep_going = (input("This person is not on the platform, would you like to quit [y/n]?") == "n")
+            current_account.send_message(ai_social_network.list_of_people, ai_social_network.list_of_names)
             break
+
+        elif choice == "3":
+            print("Not finished yet")
 
         elif choice == "5":
             print("Thank you for visiting. Goodbye")
@@ -79,7 +87,3 @@ if __name__ == "__main__":
         
         #restart menu
         choice = social_network_ui.mainMenu()
-
-
-
-        

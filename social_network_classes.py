@@ -38,8 +38,14 @@ class Person:
         #implement adding friend. Hint add to self.friendlist
         pass
 
-    def send_message(self):
-        #implement sending message to friend here
+    def send_message(self, list_of_people, list_of_names):
+        keep_going = True
+        while keep_going:
+            recipient = input("Who would you like to send a message to: ")
+            if recipient in list_of_names:
+                list_of_people[list_of_names.index(recipient)].inbox.append([input("What is the message you would like to send: ") , recipient])
+            else:
+                keep_going = (input("This person is not on the platform, would you like to quit [y/n]?") == "n")
         pass
 
     def change_name(self, name):
