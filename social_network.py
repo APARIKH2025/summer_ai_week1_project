@@ -8,6 +8,7 @@ import social_network_ui
 ai_social_network = SocialNetwork()
 signed_in = False
 
+
 while not(signed_in):
     if (input("Do you have an account [y/n]?") == 'y'):
         current_account_name = input("What is your name: ")
@@ -75,8 +76,23 @@ if __name__ == "__main__":
             current_account.send_message(ai_social_network.list_of_people, ai_social_network.list_of_names)
             break
 
-        elif choice == "3":
-            print("Not finished yet")
+        elif choice == "4":
+            signed_in = False
+            while not(signed_in):
+                if (input("Do you have an account [y/n]?") == 'y'):
+                    current_account_name = input("What is your name: ")
+                    current_account = ai_social_network.list_of_people[ai_social_network.list_of_names.index(current_account_name)]
+                    if current_account.check_password(input("What is your password: ")):
+                        print("Welcome")
+                        signed_in = True
+                    else:
+                        print("Wrong password")
+
+                else:
+                    ai_social_network.create_account()
+                    current_account_name = input("Please confirm your name: ")
+                    current_account = ai_social_network.list_of_people[ai_social_network.list_of_names.index(current_account_name)]
+                    signed_in = True
 
         elif choice == "5":
             print("Thank you for visiting. Goodbye")
