@@ -28,6 +28,7 @@ class Person:
         self.id = name
         self.year = age
         self.friendlist = []
+        self.inbox = []
 
     def add_friend(self, person_object):
         #implement adding friend. Hint add to self.friendlist
@@ -35,4 +36,12 @@ class Person:
 
     def send_message(self):
         #implement sending message to friend here
+        pass
+
+    def change_name(self, name):
+        self.id = name
+        pass
+
+    def change_age(self, age):
+        self.year = age
         pass
