@@ -34,10 +34,6 @@ if __name__ == "__main__":
 
     while True: 
         if choice == "1":
-            print("\nYou are now in the create account menu")
-            
-
-        elif choice == "2":
             inner_menu_choice = social_network_ui.manageAccountMenu()
             #Handle inner menu here
             while True:
@@ -57,13 +53,24 @@ if __name__ == "__main__":
                     if nameorage == "2":
                         new_age = input("What is the new age: ")
                         current_account.change_age(new_age)
+                        print("Your new age is", current_account.year)
                         break
+
 
                 else:
                     print("Your input is invalid. Try Again!")
                     inner_menu_choice = social_network_ui.manageAccountMenu()
+        elif choice == "2":
+            keep_going = True
+            while keep_going:
+                recipient = input("Who would you like to send a message to: ")
+                if recipient in ai_social_network.list_of_names:
+                    print("Did not finish")
+                else:
+                    keep_going = (input("This person is not on the platform, would you like to quit [y/n]?") == "n")
+            break
 
-        elif choice == "3":
+        elif choice == "5":
             print("Thank you for visiting. Goodbye")
             break
 

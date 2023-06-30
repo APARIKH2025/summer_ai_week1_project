@@ -2,9 +2,9 @@
 
 def mainMenu():
     print("")
-    print("1. Create a new account")
-    print("2. Manage my account")
-    print("3. Quit")
+    print("1. Manage my account")
+    print("2. Send a message")
+    print("5. Quit or Change Account")
     print("********************************************************")
     return input("Please Choose a number: ")
 
