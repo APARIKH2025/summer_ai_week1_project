@@ -56,6 +56,8 @@ if __name__ == "__main__":
                         current_account.change_age(new_age)
                         print("Your new age is", current_account.year)
                         break
+                elif inner_menu_choice == "2":
+                    print("Not finished")
 
                 elif inner_menu_choice == "4":
                     if current_account.inbox == []:
