@@ -26,7 +26,17 @@ if __name__ == "__main__":
             while True:
                 if inner_menu_choice == "5":
                     break
+
+                elif (inner_menu_choice == "1"):
+                    print("1. Change your name\n2. Change your age")
+                    nameorage = input("Please enter 1 or 2: ")
+                    if nameorage == "1":
+                        print("not finished yet")
+                        break
+
+
                 else:
+                    print("Your input is invalid. Try Again!")
                     inner_menu_choice = social_network_ui.manageAccountMenu()
 
         elif choice == "3":
