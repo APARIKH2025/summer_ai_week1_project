@@ -4,14 +4,13 @@ def mainMenu():
     print("")
     print("1. Manage my account")
     print("2. Send a message")
-    
+    print("3. Block user")
     print("4. Change account")
     print("5. Quit")
     print("********************************************************")
     return input("Please Choose a number: ")
 
 def manageAccountMenu():
-    print("")
     print("1. Edit my details")
     print("2. Add a friend")
     print("3. View all my friends")

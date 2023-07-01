@@ -56,8 +56,21 @@ if __name__ == "__main__":
                         current_account.change_age(new_age)
                         print("Your new age is", current_account.year)
                         break
+
                 elif inner_menu_choice == "2":
-                    print("Not finished")
+                    friend = input("Who do you want to add as your friend: ")
+                    if friend in ai_social_network.list_of_names and not(friend in current_account.friendlist):
+                        current_account.friendlist.append(friend)
+                    elif friend in current_account.friendlist:
+                        print(friend,"is already your friend.")
+                    else:
+                        print(friend, "was not found.")
+                    break
+
+                elif inner_menu_choice == "3":
+                    for friends in current_account.friendlist:
+                        print(friends)
+
 
                 elif inner_menu_choice == "4":
                     if current_account.inbox == []:
@@ -77,6 +90,14 @@ if __name__ == "__main__":
         elif choice == "2":
             current_account.send_message(ai_social_network.list_of_people, ai_social_network.list_of_names)
             break
+        
+        elif choice == "3":
+            person_to_block = input("Who would you like to block: ")
+            if person_to_block in current_account.friendlist:
+                current_account.friendlist.remove(person_to_block)
+            if current_account_name in ai_social_network.list_of_people[ai_social_network.list_of_names.index(person_to_block)].friendlist:
+                ai_social_network.list_of_people[ai_social_network.list_of_names.index(person_to_block)].friendlist.remove(current_account_name)
+            print(person_to_block, "has been blocked.")
 
         elif choice == "4":
             signed_in = False
