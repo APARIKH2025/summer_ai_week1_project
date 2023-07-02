@@ -69,8 +69,9 @@ if __name__ == "__main__":
 
                 elif inner_menu_choice == "3":
                     for friends in current_account.friendlist:
-                        print(friends)
-
+                      print(friends)
+                    break
+                    
 
                 elif inner_menu_choice == "4":
                     if current_account.inbox == []:
