@@ -77,7 +77,7 @@ if __name__ == "__main__":
                        print("You have no new messages.")
                     else:
                         for message in current_account.inbox:
-                            print(message)
+                            print(message[0], "from", message[1])
                             if (input("Do you want to reply [y/n]: ") == "y"):
                                 ai_social_network.list_of_people[ai_social_network.list_of_names.index(message[1])].inbox.append([input("What is the message you would like to send: ") , current_account_name])
                         current_account.inbox.remove(message)
@@ -88,8 +88,8 @@ if __name__ == "__main__":
                     inner_menu_choice = social_network_ui.manageAccountMenu()
 
         elif choice == "2":
-            current_account.send_message(ai_social_network.list_of_people, ai_social_network.list_of_names)
-            break
+            current_account.send_message(ai_social_network.list_of_people, ai_social_network.list_of_names, current_account_name)
+            
         
         elif choice == "3":
             person_to_block = input("Who would you like to block: ")

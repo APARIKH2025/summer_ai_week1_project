@@ -34,13 +34,14 @@ class Person:
         self.friendlist = []
         self.inbox = []
 
-    def send_message(self, list_of_people, list_of_names):
+    def send_message(self, list_of_people, list_of_names, sender):
         keep_going = True
-        while keep_going:
+        while keep_going == True:
             recipient = input("Who would you like to send a message to: ")
             if recipient in list_of_names:
-                list_of_people[list_of_names.index(recipient)].inbox.append([input("What is the message you would like to send: ") , recipient])
+                list_of_people[list_of_names.index(recipient)].inbox.append([input("What is the message you would like to send: ") , sender])
                 keep_going == False
+                break
             else:
                 keep_going = (input("This person is not on the platform, would you like to quit [y/n]?") == "n")
         
