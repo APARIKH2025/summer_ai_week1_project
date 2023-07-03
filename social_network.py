@@ -68,8 +68,7 @@ if __name__ == "__main__":
                     break
 
                 elif inner_menu_choice == "3":
-                    for friends in current_account.friendlist:
-                      print(friends)
+                    current_account.print_friendlist()
                     break
                     
 

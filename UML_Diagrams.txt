@@ -1,0 +1,25 @@
+Class Person:
+ - Attributes:
+    - name
+    - age
+    - password
+    - friend list
+    - inbox
+ - Functions:
+    - change name
+    - change age
+    - check password
+    - Add friend (in main file, not defined as function)
+    - send message
+    - check messages (in main file, not defined as function)
+    - block friends (in main file, not defined as function)
+    - view friends
+
+
+Class SocialNetwork
+ - Attributes:
+    - list_of_people
+    - list_of_names
+ - Functions:
+    - Create account
+    - switch account (in main file, not defined as function)

@@ -56,3 +56,7 @@ class Person:
 
     def check_password(self, password):
         return self.password == password
+    
+    def print_friendlist(self):
+        for friend in self.friendlist:
+            print(friend)
